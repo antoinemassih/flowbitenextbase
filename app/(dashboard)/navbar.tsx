@@ -1,9 +1,9 @@
 import { useSidebarContext } from "@/context/SidebarContext";
 import { isSmallScreen } from "@/helpers/is-small-screen";
-import { DarkThemeToggle, Navbar } from "flowbite-react";
+import { Button, DarkThemeToggle, Navbar, TextInput } from "flowbite-react";
 import Image from "next/image";
 import type { FC } from "react";
-import { HiMenuAlt1, HiX } from "react-icons/hi";
+import { HiMenuAlt1, HiSearch, HiX } from "react-icons/hi";
 
 export const DashboardNavbar: FC<Record<string, never>> = function () {
   const { isCollapsed: isSidebarCollapsed, setCollapsed: setSidebarCollapsed } =
@@ -38,9 +38,22 @@ export const DashboardNavbar: FC<Record<string, never>> = function () {
                   width="24"
                 />
                 <span className="self-center whitespace-nowrap px-3 text-xl font-semibold dark:text-white">
-                  Flowbite
+                  xolio
                 </span>
               </Navbar.Brand>
+              <div className="flex items-center space-x-2">
+                <TextInput
+                  id="search"
+                  type="search"
+                  placeholder="Search Anything.."
+                  required={true}
+                  icon={HiSearch} // You can use an icon for the search field
+                  className="flex-grow" // This makes the input expand to take available space
+                />
+                <Button>
+                  Search
+                </Button>
+              </div>
             </div>
             <DarkThemeToggle />
           </div>

@@ -67,32 +67,27 @@ export const HomePageContent: NextPage = function () {
       <section>
         <header>
           <h1 className="mb-6 text-5xl font-extrabold dark:text-white">
-            Welcome to <code>Flowbite</code> on <code>Next.js</code>!
+            <div className="flex items-center space-x-4">
+      <span>
+        <AvatarExample/>
+      </span>
+              <span className="text-4xl font-medium">
+        Tanya's Playbook
+      </span>
+              <span>
+                <ButtonGroupExample />
+              </span>
+              <span><Button>Settings</Button></span>
+              <span><DropdownExample /></span>
+            </div>
           </h1>
         </header>
       </section>
-      <section>
-        <header>
-          <h2 className="mb-3 text-4xl font-bold dark:text-gray-200">Alert</h2>
-        </header>
-        <AlertsExample />
-      </section>
-      <section>
-        <header>
-          <h2 className="mb-3 mt-9 text-4xl font-bold dark:text-gray-200">
-            Accordion
-          </h2>
-        </header>
-        <AccordionExample />
-      </section>
-      <section>
-        <header>
-          <h2 className="mb-3 mt-9 text-4xl font-bold dark:text-gray-200">
-            Avatar
-          </h2>
-        </header>
-        <AvatarExample />
-      </section>
+     
+       <CardGrid/>
+        
+     
+
       <section>
         <header>
           <h2 className="mb-3 mt-9 text-4xl font-bold dark:text-gray-200">
@@ -141,14 +136,7 @@ export const HomePageContent: NextPage = function () {
         </header>
         <CarouselExample />
       </section>
-      <section>
-        <header>
-          <h2 className="mb-3 mt-9 text-4xl font-bold dark:text-gray-200">
-            Dropdown
-          </h2>
-        </header>
-        <DropdownExample />
-      </section>
+
       <section>
         <header>
           <h2 className="mb-3 mt-9 text-4xl font-bold dark:text-gray-200">
@@ -496,12 +484,12 @@ const ButtonGroupExample: FC = function () {
 
 const CardExample: FC = function () {
   return (
-    <div className="max-w-sm">
+    <div className="max-w-xs">
       <Card
         imgAlt="Meaningful alt text for an image that is not purely decorative"
         imgSrc="/image-1.jpg"
       >
-        <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+        <h5 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
           Noteworthy technology acquisitions 2021
         </h5>
         <p className="font-normal text-gray-700 dark:text-gray-400">
@@ -537,11 +525,11 @@ const DropdownExample: FC = function () {
           name@flowbite.com
         </span>
       </Dropdown.Header>
-      <Dropdown.Item>Dashboard</Dropdown.Item>
-      <Dropdown.Item>Settings</Dropdown.Item>
-      <Dropdown.Item>Earnings</Dropdown.Item>
+      <Dropdown.Item>Card Template 1</Dropdown.Item>
+      <Dropdown.Item>Card Template 2</Dropdown.Item>
+      <Dropdown.Item>Card Template 3</Dropdown.Item>
       <Dropdown.Divider />
-      <Dropdown.Item>Sign out</Dropdown.Item>
+      <Dropdown.Item>Apply to All </Dropdown.Item>
     </Dropdown>
   );
 };
@@ -1046,6 +1034,30 @@ const TooltipsExample: FC = function () {
       <Tooltip content="Tooltip content" placement="left">
         <Button>Tooltip left</Button>
       </Tooltip>
+    </div>
+  );
+};
+export default function CardGrid() {
+  return (
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <div className="p-4">
+        <CardExample />
+      </div>
+      <div className="p-4">
+        <CardExample />
+      </div>
+      <div className="p-4">
+        <CardExample />
+      </div>
+      <div className="p-4">
+        <CardExample />
+      </div>
+      <div className="p-4">
+        <CardExample />
+      </div>
+      <div className="p-4">
+        <CardExample />
+      </div>
     </div>
   );
 };
