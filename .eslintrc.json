@@ -7,7 +7,8 @@
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
     "plugin:tailwindcss/recommended",
-    "plugin:@next/next/recommended"
+    "plugin:@next/next/recommended",
+    "plugin:storybook/recommended"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -24,7 +25,9 @@
     "tailwindcss/classnames-order": [
       "error",
       {
-        "callees": ["classnames"],
+        "callees": [
+          "classnames"
+        ],
         "config": "tailwind.config.ts"
       }
     ],
