@@ -66,27 +66,33 @@ export const HomePageContent: NextPage = function () {
     <div className="p-6">
       <section>
         <header>
+          <section>
+            <BreadcrumbExample />
+          </section>
           <h1 className="mb-6 text-5xl font-extrabold dark:text-white">
             <div className="flex items-center space-x-4">
-      <span>
-        <AvatarExample/>
-      </span>
-              <span className="text-4xl font-medium">
-        Tanya's Playbook
-      </span>
+              <span>
+                <AvatarExample />
+              </span>
+              <span className="text-4xl font-medium">Tanya's Playbook</span>
               <span>
                 <ButtonGroupExample />
               </span>
-              <span><Button>Settings</Button></span>
-              <span><DropdownExample /></span>
+              <span>
+                <Button>Settings</Button>
+              </span>
+              <span>
+                <DropdownExample />
+              </span>
             </div>
           </h1>
         </header>
       </section>
-     
-       <CardGrid/>
-        
-     
+      <section>
+
+        <CarouselExample />
+      </section>
+      <CardGrid />
 
       <section>
         <header>
@@ -96,14 +102,7 @@ export const HomePageContent: NextPage = function () {
         </header>
         <BadgesExample />
       </section>
-      <section>
-        <header>
-          <h2 className="mb-3 mt-9 text-4xl font-bold dark:text-gray-200">
-            Breadcrumb
-          </h2>
-        </header>
-        <BreadcrumbExample />
-      </section>
+
       <section>
         <header>
           <h2 className="mb-3 mt-9 text-4xl font-bold dark:text-gray-200">
@@ -112,30 +111,7 @@ export const HomePageContent: NextPage = function () {
         </header>
         <ButtonsExample />
       </section>
-      <section>
-        <header>
-          <h2 className="mb-3 mt-9 text-4xl font-bold dark:text-gray-200">
-            Button group
-          </h2>
-        </header>
-        <ButtonGroupExample />
-      </section>
-      <section>
-        <header>
-          <h2 className="mb-3 mt-9 text-4xl font-bold dark:text-gray-200">
-            Card
-          </h2>
-        </header>
-        <CardExample />
-      </section>
-      <section>
-        <header>
-          <h2 className="mb-3 mt-9 text-4xl font-bold dark:text-gray-200">
-            Carousel
-          </h2>
-        </header>
-        <CarouselExample />
-      </section>
+
 
       <section>
         <header>
@@ -496,6 +472,11 @@ const CardExample: FC = function () {
           Here are the biggest enterprise technology acquisitions of 2021 so
           far, in reverse chronological order.
         </p>
+        <div>
+          <Badge badgeColor="success" size='sm'>good sh</Badge>
+        </div>
+
+
       </Card>
     </div>
   );
