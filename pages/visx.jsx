@@ -1,0 +1,63 @@
+import React from 'react';
+
+import BarGraph from "../components/BarGraph.jsx";
+import CandlestickChart from "../components/CandlestickChart.jsx";
+import Gauge from "../components/Gauge.jsx";
+import BurstChart from "../components/BurstChart.jsx";
+
+export default function visx() {
+  const data = {
+    name: 'root',
+    children: [
+      {
+        name: 'Level 1 - Category 1',
+        children: [
+          {
+            name: 'Level 2 - Subcategory 1.1',
+            children: [
+              { name: 'Level 3 - Item 1.1.1', value: 30 },
+              { name: 'Level 3 - Item 1.1.2', value: 20 },
+            ],
+          },
+          {
+            name: 'Level 2 - Subcategory 1.2',
+            children: [
+              { name: 'Level 3 - Item 1.2.1', value: 10 },
+              { name: 'Level 3 - Item 1.2.2', value: 40 },
+            ],
+          },
+        ],
+      },
+      {
+        name: 'Level 1 - Category 2',
+        children: [
+          {
+            name: 'Level 2 - Subcategory 2.1',
+            children: [
+              { name: 'Level 3 - Item 2.1.1', value: 25 },
+              { name: 'Level 3 - Item 2.1.2', value: 35 },
+            ],
+          },
+          {
+            name: 'Level 2 - Subcategory 2.2',
+            children: [
+              { name: 'Level 3 - Item 2.2.1', value: 15 },
+              { name: 'Level 3 - Item 2.2.2', value: 45 },
+            ],
+          },
+        ],
+      },
+    ],
+  };
+
+
+
+
+  return (
+    <div className="container">
+      <BarGraph></BarGraph>
+      <BurstChart width={500} height={500} data={data} />
+      <Gauge></Gauge>
+    </div>
+  );
+}

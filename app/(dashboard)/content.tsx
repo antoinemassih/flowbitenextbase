@@ -473,10 +473,18 @@ const CardExample: FC = function () {
           far, in reverse chronological order.
         </p>
         <div>
-          <Badge badgeColor="success" size='sm'>good sh</Badge>
+          <div className="flex flex-wrap gap-2">
+            <Badge color="info" size="sm">
+              Info
+            </Badge>
+            <Badge color="gray" size="sm">
+              Gray
+            </Badge>
+            <Badge color="failure" size="sm">
+              Failure
+            </Badge>
+          </div>
         </div>
-
-
       </Card>
     </div>
   );
