@@ -4,6 +4,7 @@ import BarGraph from "../components/BarGraph.jsx";
 import CandlestickChart from "../components/CandlestickChart.jsx";
 import Gauge from "../components/Gauge.jsx";
 import BurstChart from "../components/BurstChart.jsx";
+import StreamGraph from "../components/StreamGraph.jsx";
 
 export default function visx() {
   const data = {
@@ -58,6 +59,9 @@ export default function visx() {
       <BarGraph></BarGraph>
       <BurstChart width={500} height={500} data={data} />
       <Gauge></Gauge>
+      <div style={{ width: '100%', height: '500px' }}>
+        <StreamGraph width={800} height={500} animate={true} />
+      </div>
     </div>
   );
 }
