@@ -30,7 +30,7 @@ import {
 } from "flowbite-react";
 import type { NextPage } from "next";
 import Image from "next/image";
-import type { FC } from "react";
+import { FC, useEffect } from "react";
 import React, { useState } from "react";
 import {
   BsDribbble,
@@ -63,6 +63,15 @@ import {
 import StreamGraph from "../../components/StreamGraph.jsx";
 
 export const HomePageContent: NextPage = function () {
+
+  const [isMounted, setIsMounted] = useState(false);
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  if (!isMounted) return null; // Avoid mismatches by rendering nothing initially
+
+
   return (
     <div className="p-6">
       <section>

@@ -28,7 +28,7 @@ export const DashboardSidebar: FC = function () {
     >
       <Sidebar.Items>
         <Sidebar.ItemGroup>
-          <Sidebar.Item href="#" icon={HiHome}>
+          <Sidebar.Item href="about" icon={HiHome}>
             Home
           </Sidebar.Item>
           <Sidebar.Item href="#" icon={HiHashtag}>
