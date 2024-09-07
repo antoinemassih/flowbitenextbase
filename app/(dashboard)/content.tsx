@@ -60,6 +60,7 @@ import {
   HiViewBoards,
   HiX,
 } from "react-icons/hi";
+import StreamGraph from "../../components/StreamGraph.jsx";
 
 export const HomePageContent: NextPage = function () {
   return (
@@ -89,8 +90,10 @@ export const HomePageContent: NextPage = function () {
         </header>
       </section>
       <section>
-
         <CarouselExample />
+        <div style={{ width: "100%", height: "500px" }}>
+          <StreamGraph width={1200} height={500} animate={true} />
+        </div>
       </section>
       <CardGrid />
 
@@ -111,7 +114,6 @@ export const HomePageContent: NextPage = function () {
         </header>
         <ButtonsExample />
       </section>
-
 
       <section>
         <header>
@@ -504,6 +506,7 @@ const CarouselExample: FC = function () {
     </div>
   );
 };
+
 
 const DropdownExample: FC = function () {
   return (
