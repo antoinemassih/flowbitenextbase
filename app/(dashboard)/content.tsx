@@ -356,11 +356,11 @@ const ButtonGroupExample: FC = function () {
 
 const DropdownExample: FC = function () {
   return (
-    <Dropdown label="Dropdown button">
+    <Dropdown label="Card Layout">
       <Dropdown.Header>
-        <span className="block text-sm">Bonnie success</span>
+        <span className="block text-sm">Radar Love Template</span>
         <span className="block truncate text-sm font-medium">
-          name@flowbite.com
+          Current Template
         </span>
       </Dropdown.Header>
       <Dropdown.Item>Card Template 1</Dropdown.Item>

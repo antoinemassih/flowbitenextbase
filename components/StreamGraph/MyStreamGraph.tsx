@@ -19,7 +19,7 @@ export default function MyStreamGraph() {
     return () => window.removeEventListener('resize', updateWidth);
   }, []);
   return(
-    <div ref={parentDivRef} style={{ width: '100%' }}>
+    <div   ref={parentDivRef} style={{ width: '100%' }}>
       {width > 0 && <StreamGraph width={width} height={500} animate={true}/>}
     </div>
 

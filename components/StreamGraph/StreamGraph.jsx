@@ -12,7 +12,7 @@ const NUM_LAYERS = 20;
 const SAMPLES_PER_LAYER = 200;
 const BUMPS_PER_LAYER = 10;
 const NO_PATTERN = 'transparent';
-export const BACKGROUND = '#ffe1ff';
+export const BACKGROUND = 'none';
 
 // utils
 const range = (n) => Array.from(new Array(n), (_, i) => i);
