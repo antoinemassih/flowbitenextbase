@@ -60,8 +60,11 @@ import {
   HiViewBoards,
   HiX,
 } from "react-icons/hi";
+import CardGrid from "@/components/cards/CardGrid";
 
 import dynamic from 'next/dynamic';
+import MyTooltip from "@/components/general/tooltips/MyTooltip";
+import MyRatingStars from "@/components/general/rating/MyRatingStars";
 
 
 const StreamGraph = dynamic(() => import("../../components/StreamGraph.jsx"), {
@@ -91,6 +94,7 @@ export const HomePageContent: NextPage = function () {
                 <AvatarExample />
               </span>
               <span className="text-4xl font-medium">Tanya's Playbook</span>
+
               <span>
                 <ButtonGroupExample />
               </span>
@@ -100,6 +104,9 @@ export const HomePageContent: NextPage = function () {
               <span>
                 <DropdownExample />
               </span>
+            </div>
+            <div>
+              <MyRatingStars />
             </div>
           </h1>
         </header>
@@ -112,145 +119,11 @@ export const HomePageContent: NextPage = function () {
       </section>
       <CardGrid />
 
-      <section>
-        <header>
-          <h2 className="mb-3 mt-9 text-4xl font-bold dark:text-gray-200">
-            Badges
-          </h2>
-        </header>
-        <BadgesExample />
-      </section>
+
 
       <section>
-        <header>
-          <h2 className="mb-3 mt-9 text-4xl font-bold dark:text-gray-200">
-            Buttons
-          </h2>
-        </header>
-        <ButtonsExample />
-      </section>
 
-      <section>
-        <header>
-          <h2 className="mb-3 mt-9 text-4xl font-bold dark:text-gray-200">
-            Forms
-          </h2>
-        </header>
-        <FormsExample />
-      </section>
-      <section>
-        <header>
-          <h2 className="mb-3 mt-9 text-4xl font-bold dark:text-gray-200">
-            Footer
-          </h2>
-        </header>
-        <FooterExample />
-      </section>
-      <section>
-        <header>
-          <h2 className="mb-3 mt-9 text-4xl font-bold dark:text-gray-200">
-            List group
-          </h2>
-        </header>
-        <ListGroupExample />
-      </section>
-      <section>
-        <header>
-          <h2 className="mb-3 mt-9 text-4xl font-bold dark:text-gray-200">
-            Modal
-          </h2>
-        </header>
         <ModalExample />
-      </section>
-      <section>
-        <header>
-          <h2 className="mb-3 mt-9 text-4xl font-bold dark:text-gray-200">
-            Navbars
-          </h2>
-        </header>
-        <NavbarsExample />
-      </section>
-      <section>
-        <header>
-          <h2 className="mb-3 mt-9 text-4xl font-bold dark:text-gray-200">
-            Pagination
-          </h2>
-        </header>
-        <PaginationExample />
-      </section>
-      <section>
-        <header>
-          <h2 className="mb-3 mt-9 text-4xl font-bold dark:text-gray-200">
-            Progress
-          </h2>
-        </header>
-        <ProgressExample />
-      </section>
-      <section>
-        <header>
-          <h2 className="mb-3 mt-9 text-4xl font-bold dark:text-gray-200">
-            Rating
-          </h2>
-        </header>
-        <RatingExample />
-      </section>
-      <section>
-        <header>
-          <h2 className="mb-3 mt-9 text-4xl font-bold dark:text-gray-200">
-            Sidebar
-          </h2>
-        </header>
-        <SidebarExample />
-      </section>
-      <section>
-        <header>
-          <h2 className="mb-3 mt-9 text-4xl font-bold dark:text-gray-200">
-            Spinners
-          </h2>
-        </header>
-        <SpinnersExample />
-      </section>
-      <section>
-        <header>
-          <h2 className="mb-3 mt-9 text-4xl font-bold dark:text-gray-200">
-            Tables
-          </h2>
-        </header>
-        <div className="max-w-full overflow-x-scroll">
-          <TablesExample />
-        </div>
-      </section>
-      <section>
-        <header>
-          <h2 className="mb-3 mt-9 text-4xl font-bold dark:text-gray-200">
-            Tabs
-          </h2>
-        </header>
-        <TabsExample />
-      </section>
-      <section>
-        <header>
-          <h2 className="mb-3 mt-9 text-4xl font-bold dark:text-gray-200">
-            Timeline
-          </h2>
-        </header>
-        <TimelineExample />
-      </section>
-      <section>
-        <header>
-          <h2 className="mb-3 mt-9 text-4xl font-bold dark:text-gray-200">
-            Toast
-          </h2>
-        </header>
-        <ToastExample />
-      </section>
-      <section>
-        <header>
-          <h2 className="mb-3 mt-9 text-4xl font-bold dark:text-gray-200">
-            Tooltips
-          </h2>
-        </header>
-        <TooltipsExample />
       </section>
     </div>
   );
@@ -472,38 +345,6 @@ const ButtonGroupExample: FC = function () {
         <HiCloudDownload className="mr-3 h-4 w-4" /> Messages
       </Button>
     </Button.Group>
-  );
-};
-
-const CardExample: FC = function () {
-  return (
-    <div className="max-w-xs">
-      <Card
-        imgAlt="Meaningful alt text for an image that is not purely decorative"
-        imgSrc="/image-1.jpg"
-      >
-        <h5 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
-          Noteworthy technology acquisitions 2021
-        </h5>
-        <p className="font-normal text-gray-700 dark:text-gray-400">
-          Here are the biggest enterprise technology acquisitions of 2021 so
-          far, in reverse chronological order.
-        </p>
-        <div>
-          <div className="flex flex-wrap gap-2">
-            <Badge color="info" size="sm">
-              Info
-            </Badge>
-            <Badge color="gray" size="sm">
-              Gray
-            </Badge>
-            <Badge color="failure" size="sm">
-              Failure
-            </Badge>
-          </div>
-        </div>
-      </Card>
-    </div>
   );
 };
 
@@ -743,30 +584,6 @@ const ProgressExample: FC = function () {
   );
 };
 
-const RatingExample: FC = function () {
-  return (
-    <div className="flex flex-col justify-center gap-4">
-      <Rating>
-        <Rating.Star />
-        <Rating.Star />
-        <Rating.Star />
-        <Rating.Star />
-        <Rating.Star filled={false} />
-        <p className="ml-2 text-sm font-medium text-gray-500 dark:text-gray-400">
-          4.95 out of 5
-        </p>
-      </Rating>
-      <p className="text-sm font-medium text-gray-500 dark:text-gray-400">
-        1,745 global ratings
-      </p>
-      <Rating.Advanced percentFilled={70}>5 star</Rating.Advanced>
-      <Rating.Advanced percentFilled={17}>4 star</Rating.Advanced>
-      <Rating.Advanced percentFilled={8}>3 star</Rating.Advanced>
-      <Rating.Advanced percentFilled={4}>2 star</Rating.Advanced>
-      <Rating.Advanced percentFilled={1}>1 star</Rating.Advanced>
-    </div>
-  );
-};
 
 const SidebarExample: FC = function () {
   const [isOpen, setOpen] = useState(false);
@@ -1026,45 +843,4 @@ const ToastExample: FC = function () {
   );
 };
 
-const TooltipsExample: FC = function () {
-  return (
-    <div className="flex gap-2">
-      <Tooltip content="Tooltip content" placement="top">
-        <Button>Tooltip top</Button>
-      </Tooltip>
-      <Tooltip content="Tooltip content" placement="right">
-        <Button>Tooltip right</Button>
-      </Tooltip>
-      <Tooltip content="Tooltip content" placement="bottom">
-        <Button>Tooltip bottom</Button>
-      </Tooltip>
-      <Tooltip content="Tooltip content" placement="left">
-        <Button>Tooltip left</Button>
-      </Tooltip>
-    </div>
-  );
-};
-export default function CardGrid() {
-  return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-      <div className="p-4">
-        <CardExample />
-      </div>
-      <div className="p-4">
-        <CardExample />
-      </div>
-      <div className="p-4">
-        <CardExample />
-      </div>
-      <div className="p-4">
-        <CardExample />
-      </div>
-      <div className="p-4">
-        <CardExample />
-      </div>
-      <div className="p-4">
-        <CardExample />
-      </div>
-    </div>
-  );
-};
+
