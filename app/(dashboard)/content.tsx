@@ -60,7 +60,13 @@ import {
   HiViewBoards,
   HiX,
 } from "react-icons/hi";
-import StreamGraph from "../../components/StreamGraph.jsx";
+
+import dynamic from 'next/dynamic';
+
+
+const StreamGraph = dynamic(() => import("../../components/StreamGraph.jsx"), {
+  ssr: false,
+});
 
 export const HomePageContent: NextPage = function () {
 

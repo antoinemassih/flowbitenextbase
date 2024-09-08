@@ -11,6 +11,10 @@
     "type": "git",
     "url": "https://github.com/tulupinc/flowbite-next-starter.git"
   },
+  "resolutions": {
+    "**/next": "14.2.8"
+  },
+
   "scripts": {
     "build": "next build",
     "dev": "next dev",
@@ -19,7 +23,8 @@
     "start": "next start",
     "typecheck": "tsc --noEmit",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "preinstall": "npx npm-force-resolutions"
   },
   "engines": {
     "node": ">= 16",
@@ -86,6 +91,7 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-storybook": "^0.8.0",
     "eslint-plugin-tailwindcss": "^3.13.0",
+    "npm-force-resolutions": "^0.0.10",
     "postcss": "^8",
     "prettier": "^3.0.3",
     "prettier-plugin-organize-imports": "^3.2.3",
