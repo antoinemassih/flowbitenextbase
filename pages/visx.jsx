@@ -4,7 +4,7 @@ import BarGraph from "../components/BarGraph.jsx";
 import CandlestickChart from "../components/CandlestickChart.jsx";
 import Gauge from "../components/Gauge.jsx";
 import BurstChart from "../components/BurstChart.jsx";
-import StreamGraph from "../components/StreamGraph.jsx";
+import StreamGraph from "../components/StreamGraph/StreamGraph.jsx";
 import PolarBarChart from "../components/PolarBarChart.jsx";
 import PolarVictory from "../components/victorycomponents/PolarVictory.jsx";
 

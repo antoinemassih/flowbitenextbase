@@ -4,8 +4,8 @@ import { PatternCircles, PatternWaves } from '@vx/pattern';
 import { scaleLinear, scaleOrdinal } from '@vx/scale';
 import { transpose } from 'd3-array';
 import { animated, useSpring } from 'react-spring';
-import useForceUpdate from './useForceUpdate';
-import generateData from './generateData';
+import useForceUpdate from './useForceUpdate.ts';
+import generateData from './generateData.ts';
 
 // constants
 const NUM_LAYERS = 20;

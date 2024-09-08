@@ -65,9 +65,10 @@ import CardGrid from "@/components/cards/CardGrid";
 import dynamic from 'next/dynamic';
 import MyTooltip from "@/components/general/tooltips/MyTooltip";
 import MyRatingStars from "@/components/general/rating/MyRatingStars";
+import MyStreamGraph from "@/components/StreamGraph/MyStreamGraph";
 
 
-const StreamGraph = dynamic(() => import("../../components/StreamGraph.jsx"), {
+const StreamGraph = dynamic(() => import("../../components/StreamGraph/StreamGraph.jsx"), {
   ssr: false,
 });
 
@@ -88,12 +89,13 @@ export const HomePageContent: NextPage = function () {
           <section>
             <BreadcrumbExample />
           </section>
+          <section className="pb-4">
           <h1 className="mb-6 text-5xl font-extrabold dark:text-white">
             <div className="flex items-center space-x-4">
               <span>
                 <AvatarExample />
               </span>
-              <span className="text-4xl font-medium">Tanya's Playbook</span>
+              <span className="text-4xl font-medium pt-6 pb-4">Tanya's Playbook</span>
 
               <span>
                 <ButtonGroupExample />
@@ -104,27 +106,30 @@ export const HomePageContent: NextPage = function () {
               <span>
                 <DropdownExample />
               </span>
+              <span>
+
+                <ModalExample />
+              </span>
+
             </div>
             <div>
               <MyRatingStars />
             </div>
           </h1>
+          </section>
         </header>
       </section>
       <section>
-        <CarouselExample />
+
         <div style={{ width: "100%", height: "500px" }}>
-          <StreamGraph width={1200} height={500} animate={true} />
+         <MyStreamGraph></MyStreamGraph>
         </div>
       </section>
       <CardGrid />
 
 
 
-      <section>
 
-        <ModalExample />
-      </section>
     </div>
   );
 };
@@ -348,20 +353,6 @@ const ButtonGroupExample: FC = function () {
   );
 };
 
-const CarouselExample: FC = function () {
-  return (
-    <div className="h-56 sm:h-64 xl:h-80 2xl:h-96">
-      <Carousel>
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img alt="" src="/carousel-1.svg" />
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img alt="" src="/carousel-2.svg" />
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img alt="" src="/carousel-3.svg" />
-      </Carousel>
-    </div>
-  );
-};
 
 
 const DropdownExample: FC = function () {
@@ -484,15 +475,13 @@ const ModalExample: FC = function () {
 
   return (
     <>
-      <Button onClick={() => setOpen(true)}>Toggle modal</Button>
+      <Button onClick={() => setOpen(true)}>Post</Button>
       <Modal show={isOpen} onClose={() => setOpen(false)}>
-        <Modal.Header>Terms of Service</Modal.Header>
+        <Modal.Header>Post an Idea</Modal.Header>
         <Modal.Body>
           <div className="space-y-6">
             <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400">
-              With less than a month to go before the European Union enacts new
-              consumer privacy laws for its citizens, companies around the world
-              are updating their terms of service agreements to comply.
+              With less than a month to go before the idea submission deadline, participants around the world are finalizing their proposals to comply with the competition guidelines.
             </p>
             <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400">
               The European Union’s General Data Protection Regulation (G.D.P.R.)
@@ -504,9 +493,9 @@ const ModalExample: FC = function () {
           </div>
         </Modal.Body>
         <Modal.Footer>
-          <Button onClick={() => setOpen(false)}>I accept</Button>
+          <Button onClick={() => setOpen(false)}>Submit</Button>
           <Button color="gray" onClick={() => setOpen(false)}>
-            Decline
+            Cancel
           </Button>
         </Modal.Footer>
       </Modal>
