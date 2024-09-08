@@ -3,17 +3,17 @@ import { VictoryChart, VictoryPolarAxis, VictoryBar, VictoryStack, VictoryLabel 
 import _ from 'lodash';
 
 const directions = {
-  0: "E", 45: "NE", 90: "N", 135: "NW",
+  0: "RSI", 45: "MACD", 90: "ADX", 135: "DIV",
   180: "W", 225: "SW", 270: "S", 315: "SE"
 };
-const orange = { base: "gold", highlight: "darkOrange" };
+const green = { base: "green", highlight: "darkGreen" };
 const red = { base: "tomato", highlight: "orangeRed" };
-const innerRadius = 30;
+const innerRadius = 10;
 
 function CompassCenter(props) {
   const { origin } = props;
   const circleStyle = {
-    stroke: red.base, strokeWidth: 2, fill: orange.base
+    stroke: red.base, strokeWidth: 2, fill: green.base
   };
 
   return (
@@ -36,8 +36,8 @@ function CenterLabel(props) {
   const text = [`${directions[datum._x]}`, `${Math.round(datum._y1)} mph`];
   const baseStyle = { fill: color.highlight, textAnchor: "middle" };
   const style = [
-    { ...baseStyle, fontSize: 18, fontWeight: "bold" },
-    { ...baseStyle, fontSize: 12 }
+    { ...baseStyle, fontSize: 38, fontWeight: "bold" },
+    { ...baseStyle, fontSize: 32 }
   ];
 
   return active ? (
@@ -82,6 +82,8 @@ export default function PolarVictory() {
       animate={{ duration: 500, onLoad: { duration: 500 } }}
       innerRadius={innerRadius}
       domainPadding={{ y: 10 }}
+      height={500} // Adjust height
+      width={500}  // Adjust width
       events={[{
         childName: "all",
         target: "data",
@@ -104,25 +106,36 @@ export default function PolarVictory() {
       <VictoryPolarAxis
         dependentAxis
         labelPlacement="vertical"
-        style={{ axis: { stroke: "none" } }}
+        style={{
+          axis: { stroke: "none" },  // Keep the actual axis hidden
+          grid: { stroke: "none", strokeWidth: 1 }  // Customize the circular grid lines (axis)
+        }}
         tickFormat={() => ""}
+
       />
       <VictoryPolarAxis
-        labelPlacement="parallel"
+        labelPlacement="perpendicular"
+        labelPadding={120}
         tickValues={_.keys(directions).map((k) => +k)}
         tickFormat={_.values(directions)}
+        style={{
+          tickLabels: {
+            fontSize: 40, // Change font size here
+            fill: 'gray', // Optional: Change the color of the labels
+          },axis: { stroke: "gray", strokeWidth: 2 } // Customize the outer grid line
+        }}
       />
       <VictoryStack>
         <VictoryBar
-          style={{ data: { fill: ({ active }) => active ? orange.highlight : orange.base, width: 40 } }}
+          style={{ data: { fill: ({ active }) => active ? green.highlight : green.base, width: 50 } }}
           data={state.wind || []} // Ensure data is not undefined
           x="windBearing"
           y={(d) => isNaN(d.windSpeed) ? 0 : d.windSpeed} // Fallback for invalid windSpeed
           labels={() => ""}
-          labelComponent={<CenterLabel color={orange} />}
+          labelComponent={<CenterLabel color={green} />}
         />
         <VictoryBar
-          style={{ data: { fill: (d, a) => a ? red.highlight : red.base, width: 40 } }}
+          style={{ data: { fill: (d, a) => a ? red.highlight : red.base, width: 50 } }}
           data={state.wind || []}
           x="windBearing"
           y={(d) => isNaN(d.windGust) ? 0 : d.windGust - d.windSpeed} // Fallback for invalid windGust

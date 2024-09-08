@@ -89,47 +89,46 @@ export const HomePageContent: NextPage = function () {
           <section>
             <BreadcrumbExample />
           </section>
-          <section className="pb-4">
-          <h1 className="mb-6 text-5xl font-extrabold dark:text-white">
-            <div className="flex items-center space-x-4">
-              <span>
-                <AvatarExample />
-              </span>
-              <span className="text-4xl font-medium pt-6 pb-4">Tanya's Playbook</span>
+          <section className="pb-6">
+            <h1 className="mb-6 text-5xl font-extrabold dark:text-white">
+              <div className="flex items-center space-x-4 pb-2 pt-4">
+                <span>
+                  <AvatarExample />
+                </span>
 
-              <span>
-                <ButtonGroupExample />
-              </span>
-              <span>
-                <Button>Settings</Button>
-              </span>
-              <span>
-                <DropdownExample />
-              </span>
-              <span>
+                <h1 className="flex items-center text-5xl font-bold tracking-tight dark:text-white">
+                  Tanya's Playbook
+                  <span className="me-2 ms-4 rounded bg-blue-100 px-2.5 py-0.5 text-xl font-medium tracking-tight text-blue-800 dark:bg-blue-200 dark:text-blue-800">
+                    PRO
+                  </span>
+                </h1>
 
-                <ModalExample />
-              </span>
-
-            </div>
-            <div>
-              <MyRatingStars />
-            </div>
-          </h1>
+                <span>
+                  <ButtonGroupExample />
+                </span>
+                <span>
+                  <Button>Settings</Button>
+                </span>
+                <span>
+                  <DropdownExample />
+                </span>
+                <span>
+                  <ModalExample />
+                </span>
+              </div>
+              <div>
+                <MyRatingStars />
+              </div>
+            </h1>
           </section>
         </header>
       </section>
       <section>
-
         <div style={{ width: "100%", height: "500px" }}>
-         <MyStreamGraph></MyStreamGraph>
+          <MyStreamGraph></MyStreamGraph>
         </div>
       </section>
       <CardGrid />
-
-
-
-
     </div>
   );
 };

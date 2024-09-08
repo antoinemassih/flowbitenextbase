@@ -1,10 +1,12 @@
+import MyGradientHeading from "@/components/typography/heading/MyGradientHeading";
+
 export default function AboutPage() {
   return (
     <div className="p-6">
-      <h1 className="text-4xl font-bold">About Us</h1>
-      <p className="mt-4 text-lg">
-        Welcome to the About page! Here you can find more information about us.
-      </p>
+
+      <MyGradientHeading regularText = "whatcha doing" gradientText="Hey Bro"/>
+      <p className="text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-400">i think you should be focusing on whats happening today.</p>
+
     </div>
   );
 }

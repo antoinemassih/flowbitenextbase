@@ -1,5 +1,6 @@
 import React, { FC } from "react";
 import { Badge, Card, CardProps } from "flowbite-react";
+import StockCard from "@/components/cards/stockcard/StockCard";
 
 const CardExample: FC = function () {
   return (
@@ -35,24 +36,24 @@ const CardExample: FC = function () {
 };
 export default function CardGrid() {
   return (
-    <div className="grid grid-cols-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2">
+    <div className="grid grid-cols-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-1">
       <div className="p-4">
-        <CardExample />
+        <StockCard />
       </div>
       <div className="p-4">
-        <CardExample />
+        <StockCard />
       </div>
       <div className="p-4">
-        <CardExample />
+        <StockCard />
       </div>
       <div className="p-4">
-        <CardExample />
+        <StockCard />
       </div>
       <div className="p-4">
-        <CardExample />
+        <StockCard />
       </div>
       <div className="p-4">
-        <CardExample />
+        <StockCard />
       </div>
     </div>
   );

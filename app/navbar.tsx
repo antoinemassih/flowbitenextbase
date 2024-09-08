@@ -4,6 +4,7 @@ import { Button, DarkThemeToggle, Navbar, TextInput } from "flowbite-react";
 import Image from "next/image";
 import type { FC } from "react";
 import { HiMenuAlt1, HiSearch, HiX } from "react-icons/hi";
+import SearchField from "@/components/form/search/searchField/SearchField";
 
 export const DashboardNavbar: FC<Record<string, never>> = function () {
   const { isCollapsed: isSidebarCollapsed, setCollapsed: setSidebarCollapsed } =
@@ -41,18 +42,8 @@ export const DashboardNavbar: FC<Record<string, never>> = function () {
                   xolio
                 </span>
               </Navbar.Brand>
-              <div className="flex items-center space-x-2">
-                <TextInput
-                  id="search"
-                  type="search"
-                  placeholder="Search Anything.."
-                  required={true}
-                  icon={HiSearch} // You can use an icon for the search field
-                  className="flex-grow" // This makes the input expand to take available space
-                />
-                <Button>
-                  Search
-                </Button>
+              <div className="flex items-center space-x-2 ">
+               <SearchField/>
               </div>
             </div>
             <DarkThemeToggle />
