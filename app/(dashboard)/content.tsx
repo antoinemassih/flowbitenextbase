@@ -42,7 +42,7 @@ import {
 import {
   HiAdjustments,
   HiArrowNarrowRight,
-  HiArrowSmRight,
+  HiArrowSmRight, HiChartBar,
   HiChartPie,
   HiCheck,
   HiClipboardList,
@@ -73,7 +73,6 @@ const StreamGraph = dynamic(() => import("../../components/StreamGraph/StreamGra
 });
 
 export const HomePageContent: NextPage = function () {
-
   const [isMounted, setIsMounted] = useState(false);
   useEffect(() => {
     setIsMounted(true);
@@ -81,45 +80,53 @@ export const HomePageContent: NextPage = function () {
 
   if (!isMounted) return null; // Avoid mismatches by rendering nothing initially
 
-
   return (
     <div className="p-6">
-      <section>
+      <section className="w-full">
         <header>
-          <section>
-            <BreadcrumbExample />
-          </section>
-          <section className="pb-6">
-            <h1 className="mb-6 text-5xl font-extrabold dark:text-white">
-              <div className="flex items-center space-x-4 pb-2 pt-4">
-                <span>
-                  <AvatarExample />
-                </span>
+          <section className="w-full">
+            <header>
+              <section>
+                <BreadcrumbExample />
+              </section>
+              <section className="w-full pb-6">
+                <h1 className="mb-6 text-5xl font-extrabold dark:text-white">
+                  <div className="flex items-center justify-between pb-2 pt-4">
+                    <div className="flex items-center space-x-4">
+                      <span>
+                        <AvatarExample />
+                      </span>
 
-                <h1 className="flex items-center text-5xl font-bold tracking-tight dark:text-white">
-                  Tanya's Playbook
-                  <span className="me-2 ms-4 rounded bg-blue-100 px-2.5 py-0.5 text-xl font-medium tracking-tight text-blue-800 dark:bg-blue-200 dark:text-blue-800">
-                    PRO
-                  </span>
+                      <h1 className="flex items-center text-5xl font-bold tracking-tight dark:text-white">
+                        Tanya's Playbook
+                        <span className="me-2 ms-4 rounded bg-blue-100 px-2.5 py-0.5 text-xl font-medium tracking-tight text-blue-800 dark:bg-blue-200 dark:text-blue-800">
+                          PRO
+                        </span>
+                      </h1>
+
+                      <span>
+                        <ButtonGroupExample />
+                      </span>
+                    </div>
+                    <div className="flex items-center space-x-4">
+                      <span>
+                        <Button>filter</Button>
+                      </span>
+                      <span>
+                        <DropdownExample />
+                      </span>
+                      <span>
+                        <ModalExample />
+                      </span>
+                    </div>
+                  </div>
+                  <div>
+                    <MyRatingStars />
+                  </div>
                 </h1>
-
-                <span>
-                  <ButtonGroupExample />
-                </span>
-                <span>
-                  <Button>Settings</Button>
-                </span>
-                <span>
-                  <DropdownExample />
-                </span>
-                <span>
-                  <ModalExample />
-                </span>
-              </div>
-              <div>
-                <MyRatingStars />
-              </div>
-            </h1>
+                <hr className="border-t border-gray-200 dark:border-gray-700" />
+              </section>
+            </header>
           </section>
         </header>
       </section>
@@ -340,13 +347,13 @@ const ButtonGroupExample: FC = function () {
   return (
     <Button.Group>
       <Button color="gray">
-        <HiUserCircle className="mr-3 h-4 w-4" /> Profile
+        <HiEye className="mr-3 h-4 w-4" /> Dashboard
+      </Button>
+      <Button color="gray">
+        <HiChartBar className="mr-3 h-4 w-4" /> Performance
       </Button>
       <Button color="gray">
         <HiAdjustments className="mr-3 h-4 w-4" /> Settings
-      </Button>
-      <Button color="gray">
-        <HiCloudDownload className="mr-3 h-4 w-4" /> Messages
       </Button>
     </Button.Group>
   );
@@ -461,7 +468,7 @@ const ListGroupExample: FC = function () {
         <ListGroup.Item active icon={HiUserCircle}>
           Profile
         </ListGroup.Item>
-        <ListGroup.Item icon={HiOutlineAdjustments}>Settings</ListGroup.Item>
+        <ListGroup.Item icon={HiOutlineAdjustments}>Filter</ListGroup.Item>
         <ListGroup.Item icon={HiInbox}>Messages</ListGroup.Item>
         <ListGroup.Item icon={HiCloudDownload}>Download</ListGroup.Item>
       </ListGroup>
